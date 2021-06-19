@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/plane_background"
+    tools:context=".view.FlightControlActivity">
+
+    <TextView
+        android:id="@+id/connectionMessage"
+        android:layout_width="350dp"
+        android:layout_height="90dp"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/joystick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.178" />
+
+    <TextView
+        android:id="@+id/aileronText"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/connectionMessage"
+        app:layout_constraintTop_toBottomOf="@+id/connectionMessage" />
+
+    <TextView
+        android:id="@+id/elevatorText"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/connectionMessage"
+        app:layout_constraintTop_toBottomOf="@+id/connectionMessage" />
+
+    <TextView
+        android:id="@+id/rudderText"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/joystick"
+        app:layout_constraintStart_toStartOf="@+id/connectionMessage"
+        app:layout_constraintTop_toBottomOf="@+id/aileronText" />
+
+    <TextView
+        android:id="@+id/throttleText"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/joystick"
+        app:layout_constraintEnd_toEndOf="@+id/connectionMessage"
+        app:layout_constraintTop_toBottomOf="@+id/elevatorText" />
+
+    <io.github.controlwear.virtual.joystick.android.JoystickView
+        android:id="@+id/joystick"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        app:JV_backgroundColor="@color/white_trans"
+        app:JV_borderColor="@color/dimgrey"
+        app:JV_borderWidth="5dp"
+        app:JV_buttonColor="@color/colorPrimaryDark"
+        app:JV_buttonSizeRatio="25%"
+        app:JV_fixedCenter="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/rudder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_trans"
+        android:value="0"
+        android:valueFrom="-1.0"
+        android:valueTo="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/joystick"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/joystick"
+        app:layout_constraintTop_toBottomOf="@+id/joystick"
+        app:layout_constraintVertical_bias="0.143"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:trackColorActive="@color/colorPrimary"
+        app:trackColorInactive="@color/colorPrimary"
+        app:thumbColor="@color/colorPrimaryDark"
+        app:trackHeight="5dp" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/throttle"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@color/white_trans"
+        android:rotation="270"
+        android:translationX="107dp"
+        android:value="0"
+        android:valueFrom="0"
+        android:valueTo="1.0"
+        app:labelBehavior="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/joystick"
+        app:layout_constraintEnd_toStartOf="@+id/joystick"
+        app:layout_constraintTop_toTopOf="@+id/joystick"
+        app:thumbColor="@color/colorPrimaryDark"
+        app:trackColorActive="@color/colorPrimary"
+        app:trackHeight="5dp" />
+
+    <!--TextView
+        android:id="@+id/throttleText"
+        android:layout_width="86dp"
+        android:layout_height="48dp"
+        android:rotation="270"
+        android:text="@string/throttle_0_0"
+        app:layout_constraintBottom_toBottomOf="@+id/throttle"
+        app:layout_constraintEnd_toStartOf="@+id/joystick"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/joystick"
+        app:layout_constraintVertical_bias="0.621" /-->
+
+    <!--TextView
+        android:id="@+id/rudderText"
+        android:layout_width="79dp"
+        android:layout_height="21dp"
+        android:text="@string/rudder_0_0"
+        app:layout_constraintBottom_toBottomOf="@+id/rudder"
+        app:layout_constraintEnd_toEndOf="@+id/rudder"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/rudder"
+        app:layout_constraintTop_toBottomOf="@+id/joystick"
+        app:layout_constraintVertical_bias="1.0" /-->
+
+    <!--TextView
+        android:id="@+id/aileronText"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:text="@string/aileron_0_0"
+        app:layout_constraintBottom_toTopOf="@+id/rudderText"
+        app:layout_constraintEnd_toEndOf="@+id/joystick"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/joystick"
+        app:layout_constraintVertical_bias="0.548" /-->
+
+    <!--TextView
+        android:id="@+id/elevatorText"
+        android:layout_width="87dp"
+        android:layout_height="41dp"
+        android:rotation="90"
+        android:text="@string/elevator_0_0"
+        app:layout_constraintBottom_toBottomOf="@+id/joystick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toStartOf="@+id/joystick"
+        app:layout_constraintTop_toTopOf="@+id/joystick"
+        app:layout_constraintVertical_bias="0.583" /-->
+
+    <!--Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="65dp"
+        android:layout_height="25dp"
+        android:background="@android:color/holo_red_light"
+        android:onClick="logOut"
+        android:text="@string/log_out"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" /-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

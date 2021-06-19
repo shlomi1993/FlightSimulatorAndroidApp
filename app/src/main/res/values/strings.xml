@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">FlightSimulatorAndroidApp</string>
+    <string name="app_name">Flight Simulator Control App</string>
+    <string name="show_ip_msg">IP:</string>
+    <string name="show_port_msg">Port:</string>
+    <string name="button_connect">Connect</string>
+    <string name="connect">connect</string>
 </resources>
