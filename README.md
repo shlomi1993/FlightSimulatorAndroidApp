@@ -20,10 +20,19 @@ The program is devided according to MVVM architecture:
 
 ### Class diagram:
 
-
+![FlightControlAppUML1](https://user-images.githubusercontent.com/72878018/122671190-29d19000-d1ce-11eb-8b09-8d482a9290c3.png)
 
 ## Explanation Video
 
+println("Not implemented")
+
 ## IDE and tools
 
-## Notes
+1. Android Studio
+2. Notepad++
+3. FlightGear Simulator
+
+## Presentation
+
+[FlightControl App Presentation.pptx](https://github.com/shlomi1993/FlightSimulatorAndroidApp/files/6682147/FlightControl.App.Presentation.pptx)
+
