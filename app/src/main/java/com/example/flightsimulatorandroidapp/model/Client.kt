@@ -1,31 +1,42 @@
-// Shlomi Ben-Shushan ID: 311408264
+/**
+ * Class:   Client
+ * Author:  Shlomi Ben-Shushan
+ * Date:    19/6/2021
+ */
 
 package com.example.flightsimulatorandroidapp.model
 
 import android.os.AsyncTask
 import java.io.IOException
 import java.io.OutputStream
-import java.io.Serializable
-import java.lang.Exception
 import java.net.InetAddress
 import java.net.InetSocketAddress
 import java.net.Socket
 
+/**
+ *  Client is a class that responsible for communicating with FlightGear server and sending
+ *  flight control command to it.
+ */
 class Client {
 
-    private var requests: Map<String, String>
+    // A client have a set of commands stored in a map, a Socket and an OutputStream variables.
+    private var requests: Map<String, String> = mapOf(
+        "aileron"   to  "/controls/flight/aileron",
+        "elevator"  to  "/controls/flight/elevator",
+        "rudder"    to  "/controls/flight/rudder",
+        "throttle"  to  "/controls/engines/current-engine/throttle"
+    )
     private lateinit var socket: Socket
     private lateinit var output: OutputStream
 
-    init {
-        requests = mapOf(
-            "aileron"   to  "/controls/flight/aileron",
-            "elevator"  to  "/controls/flight/elevator",
-            "rudder"    to  "/controls/flight/rudder",
-            "throttle"  to  "/controls/engines/current-engine/throttle"
-        )
-    }
-
+    /**
+     * This method connects the client to a server by given IP and port.
+     * The method does each connection in a different thread.
+     * Note that the client tries to connect only for 5 seconds to avoid program from being frozen.
+     *
+     * @param ip - IP address from type InetAddress
+     * @param port - An integer that represents a port number.
+     */
     fun connect(ip: InetAddress, port: Int) {
         val thread = Thread(Runnable {
             try {
@@ -40,10 +51,20 @@ class Client {
         thread.join()
     }
 
+    /**
+     * This method send the server a new value to a certain parameter.
+     * The method actually uses a TaskRunner companion class to do the job.
+     *
+     * @param parameter - The parameter to change (aileron, throttle, ...).
+     * @param value - The new value to set.
+     */
     fun send(parameter: String, value: String) {
         TaskRunner(this).execute(parameter, value)
     }
 
+    /**
+     * This method disconnects the client from the server.
+     */
     fun disconnect() {
         try {
             output.close()
@@ -53,12 +74,18 @@ class Client {
         }
     }
 
+    /**
+     * This method returns true if the client is connected, and false otherwise.
+     */
     fun isConnected(): Boolean {
         if (socket.isConnected)
             return true
         return false
     }
 
+    /**
+     * This class helps the send() method to send the command to the server in the background.
+     */
     companion object {
         private class TaskRunner(private val client: Client) : AsyncTask<String, Unit, Unit>() {
             override fun doInBackground(vararg args: String?) {

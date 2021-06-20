@@ -14,54 +14,64 @@
         android:layout_width="350dp"
         android:layout_height="90dp"
         android:textColor="@color/black"
-        android:textSize="26sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/joystick"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintVertical_bias="0.150" />
 
     <TextView
         android:id="@+id/aileronText"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/connectionMessage"
         app:layout_constraintTop_toBottomOf="@+id/connectionMessage" />
 
     <TextView
         android:id="@+id/elevatorText"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/connectionMessage"
         app:layout_constraintTop_toBottomOf="@+id/connectionMessage" />
 
     <TextView
         android:id="@+id/rudderText"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/joystick"
         app:layout_constraintStart_toStartOf="@+id/connectionMessage"
         app:layout_constraintTop_toBottomOf="@+id/aileronText" />
 
     <TextView
         android:id="@+id/throttleText"
-        android:layout_width="150dp"
+        android:layout_width="160dp"
         android:layout_height="50dp"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/joystick"
         app:layout_constraintEnd_toEndOf="@+id/connectionMessage"
         app:layout_constraintTop_toBottomOf="@+id/elevatorText" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        app:layout_constraintBottom_toBottomOf="@+id/joystick"
+        app:layout_constraintEnd_toEndOf="@+id/joystick"
+        app:layout_constraintStart_toStartOf="@+id/joystick"
+        app:layout_constraintTop_toTopOf="@+id/joystick"
+        app:srcCompat="@drawable/arrows" />
 
     <io.github.controlwear.virtual.joystick.android.JoystickView
         android:id="@+id/joystick"
@@ -118,69 +128,5 @@
         app:thumbColor="@color/colorPrimaryDark"
         app:trackColorActive="@color/colorPrimary"
         app:trackHeight="5dp" />
-
-    <!--TextView
-        android:id="@+id/throttleText"
-        android:layout_width="86dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        android:text="@string/throttle_0_0"
-        app:layout_constraintBottom_toBottomOf="@+id/throttle"
-        app:layout_constraintEnd_toStartOf="@+id/joystick"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/joystick"
-        app:layout_constraintVertical_bias="0.621" /-->
-
-    <!--TextView
-        android:id="@+id/rudderText"
-        android:layout_width="79dp"
-        android:layout_height="21dp"
-        android:text="@string/rudder_0_0"
-        app:layout_constraintBottom_toBottomOf="@+id/rudder"
-        app:layout_constraintEnd_toEndOf="@+id/rudder"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/rudder"
-        app:layout_constraintTop_toBottomOf="@+id/joystick"
-        app:layout_constraintVertical_bias="1.0" /-->
-
-    <!--TextView
-        android:id="@+id/aileronText"
-        android:layout_width="87dp"
-        android:layout_height="40dp"
-        android:text="@string/aileron_0_0"
-        app:layout_constraintBottom_toTopOf="@+id/rudderText"
-        app:layout_constraintEnd_toEndOf="@+id/joystick"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/joystick"
-        app:layout_constraintVertical_bias="0.548" /-->
-
-    <!--TextView
-        android:id="@+id/elevatorText"
-        android:layout_width="87dp"
-        android:layout_height="41dp"
-        android:rotation="90"
-        android:text="@string/elevator_0_0"
-        app:layout_constraintBottom_toBottomOf="@+id/joystick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="@+id/joystick"
-        app:layout_constraintTop_toTopOf="@+id/joystick"
-        app:layout_constraintVertical_bias="0.583" /-->
-
-    <!--Button
-        android:id="@+id/logoutBtn"
-        android:layout_width="65dp"
-        android:layout_height="25dp"
-        android:background="@android:color/holo_red_light"
-        android:onClick="logOut"
-        android:text="@string/log_out"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" /-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

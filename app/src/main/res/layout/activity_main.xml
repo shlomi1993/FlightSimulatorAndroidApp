@@ -46,7 +46,6 @@
 
     <EditText
         android:id="@+id/input_ip"
-        android:text="192.168.56.1"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -58,14 +57,15 @@
         android:inputType="phone"
         android:textSize="24sp"
         android:textColor="@color/black"
+        android:hint="@string/ip_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_ip"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="16dp"
+        android:autofillHints="IP Address" />
 
     <EditText
         android:id="@+id/input_port"
-        android:text="6400"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -76,23 +76,26 @@
         android:ems="10"
         android:inputType="number"
         android:textSize="24sp"
+        android:hint="@string/port_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/text_port"
         app:layout_constraintTop_toBottomOf="@+id/input_ip"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="16dp"
+        android:autofillHints="Port Number" />
 
     <Button
         android:id="@+id/connect"
         android:layout_width="320dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="130dp"
+        android:layout_height="60dp"
+        android:enabled="false"
         android:text="@string/button_connect"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_port"
+        app:layout_constraintVertical_bias="0.668" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
