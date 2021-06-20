@@ -33,7 +33,7 @@ println("Not implemented")
 1. Android Studio
 2. Notepad++
 3. FlightGear Simulator
-4. https://app.diagrams.net/ (draw.io) - for the UML
+4. draw.io ( https://app.diagrams.net/ ) - for the UML
 
 ## Presentation
 
