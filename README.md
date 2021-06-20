@@ -29,6 +29,19 @@ The program is devided according to MVVM architecture:
 ![FlightControlAppUML2](https://user-images.githubusercontent.com/72878018/122671568-0576b300-d1d0-11eb-88f0-f21deb3c1e38.png)
 
 
+## Instructions
+
+1. Install FlightGear on your machine.
+2. Open FlightGear, go to "settings", scroll down to "Additional Settings", then write: "--telnet=socket,in,10,127.0.0.1,6400,tcp". If port 6400 is occupied, you can enter any available port x.
+3. Download FlightSimulatorAndroidApp project.
+4. Open Android Studio and start an AVD - recommend to start **Pixel XL API 30**.
+5. Start FlightGear simulator.
+6. Build and run the project from Android Studio.
+7. Enter your machine's IP adrress and port 6400 (or port x you chose before).
+8. Touch connect.
+9. You can now control the simulator.
+
+
 ## Explanation Video
 
 println("Not implemented")
