@@ -26,7 +26,7 @@ The program is devided according to MVVM architecture:
 
 ### Class diagram:
 
-![FlightControlAppUML2](https://user-images.githubusercontent.com/72878018/122671951-b16cce00-d1d1-11eb-90e2-62580cab795d.png)
+![FlightControlAppUML2](https://user-images.githubusercontent.com/72878018/122671964-cea19c80-d1d1-11eb-8aad-c56aa9b0ddcc.png)
 
 
 ## Instructions
