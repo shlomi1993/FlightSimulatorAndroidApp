@@ -5,6 +5,8 @@
 This repository documents my last project in Adanced Programming 2 course at Bar-Ilan university.
 In this project I've implemented an Android app that allows the user to remotely control an aircraft in FlightGear simulator.
 
+![sshot1](https://user-images.githubusercontent.com/72878018/122671505-9f8a2b80-d1cf-11eb-8810-e9586d3ff038.png)
+
 ## System Requirements
 
 1. Android device with Android 11.0 x86 OS – Tested on Pixel XL API 30 emulator.
