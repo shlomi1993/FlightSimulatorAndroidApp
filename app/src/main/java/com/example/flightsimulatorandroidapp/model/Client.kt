@@ -6,12 +6,13 @@
 
 package com.example.flightsimulatorandroidapp.model
 
-import android.os.AsyncTask
 import java.io.IOException
 import java.io.OutputStream
 import java.net.InetAddress
 import java.net.InetSocketAddress
 import java.net.Socket
+import java.util.concurrent.Callable
+import java.util.concurrent.Executors
 
 /**
  *  Client is a class that responsible for communicating with FlightGear server and sending
@@ -53,13 +54,23 @@ class Client {
 
     /**
      * This method send the server a new value to a certain parameter.
-     * The method actually uses a TaskRunner companion class to do the job.
+     * The method uses a java.util.concurrent library to do the job asynchronously.
      *
      * @param parameter - The parameter to change (aileron, throttle, ...).
      * @param value - The new value to set.
      */
     fun send(parameter: String, value: String) {
-        TaskRunner(this).execute(parameter, value)
+        Executors.newSingleThreadExecutor().submit(Callable {
+            if (requests.containsKey(parameter)) {
+                val message = "set " + requests[parameter] + " " + value + " \r\n"
+                try {
+                    output.write(message.toByteArray(Charsets.UTF_8))
+                    output.flush()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+        })
     }
 
     /**
@@ -81,24 +92,6 @@ class Client {
         if (socket.isConnected)
             return true
         return false
-    }
-
-    /**
-     * This class helps the send() method to send the command to the server in the background.
-     */
-    companion object {
-        private class TaskRunner(private val client: Client) : AsyncTask<String, Unit, Unit>() {
-            override fun doInBackground(vararg args: String?) {
-                if (!client.requests.containsKey(args[0])) return
-                val message = ("set " + client.requests[args[0]] + " " + args[1] + " \r\n").toByteArray(Charsets.UTF_8)
-                try {
-                    client.output.write(message)
-                    client.output.flush()
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-            }
-        }
     }
 
 }
