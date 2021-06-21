@@ -63,32 +63,50 @@ println("Not implemented")
 ## Guide for installation on Android Device
 
 Download the apk an locate it (the apk in the screenshot is the flightcontrol-installation.apk before renaming).
+
 ![Screenshot_20210621-172617_My Files](https://user-images.githubusercontent.com/72878018/122782782-ac834980-d2b9-11eb-8611-71138ae60700.jpg)
 
+
 Choose "Install" to start installation process.
+
 ![Screenshot_20210621-172622_Package installer](https://user-images.githubusercontent.com/72878018/122783172-fe2bd400-d2b9-11eb-9660-63961f6e956e.jpg)
 
+
 This app is not recognized in Play Store so touch "INSTALL ANYWAY"
+
 ![Screenshot_20210621-172628_Google Play Store](https://user-images.githubusercontent.com/72878018/122783249-10a60d80-d2ba-11eb-9b1a-a0ee011de679.jpg)
 
+
 Installing...
+
 ![Screenshot_20210621-172635_Package installer](https://user-images.githubusercontent.com/72878018/122783457-41864280-d2ba-11eb-8275-710f245cbce1.jpg)
 
+
 Click "Open" to start the app.
+
 ![Screenshot_20210621-172647_Package installer](https://user-images.githubusercontent.com/72878018/122783493-4b0faa80-d2ba-11eb-9988-cb5bd3eac084.jpg)
+
 
 It is possible that your device's Anti-Virus will ask to scan the app because it isn't recognized in Play Store.
 You can choose "DON'T SEND", trust me :)
+
 ![Screenshot_20210621-172653_Google Play Store](https://user-images.githubusercontent.com/72878018/122783594-5e227a80-d2ba-11eb-9707-88c05c859db9.jpg)
 
+
 Now you can start the app:
+
 ![Screenshot_20210621-172707_Flight Simulator Control App](https://user-images.githubusercontent.com/72878018/122783957-b5284f80-d2ba-11eb-960e-a9e79a76efe2.jpg)
 
+
 And enter **valid** IP and port.
+
 ![Screenshot_20210621-172718_Flight Simulator Control App](https://user-images.githubusercontent.com/72878018/122784022-c3766b80-d2ba-11eb-8bd7-2370ffe0ea8f.jpg)
 
+
 Have a nice flight!
+
 ![Screenshot_20210621-172738_Flight Simulator Control App](https://user-images.githubusercontent.com/72878018/122784087-d1c48780-d2ba-11eb-826f-388a9038e92a.jpg)
+
 
 
 ## IDE and tools
