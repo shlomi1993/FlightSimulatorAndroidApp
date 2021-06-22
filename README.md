@@ -108,12 +108,12 @@ Now you can start the app:
 ![Screenshot_20210621-172707_Flight Simulator Control App](https://user-images.githubusercontent.com/72878018/122783957-b5284f80-d2ba-11eb-960e-a9e79a76efe2.jpg)
 
 
-And enter **valid** IP and port, and press connect.
+Enter **valid** IP address and port number, and press connect.
 
 ![Screenshot_20210621-172718_Flight Simulator Control App](https://user-images.githubusercontent.com/72878018/122784022-c3766b80-d2ba-11eb-8bd7-2370ffe0ea8f.jpg)
 
 
-Have a nice flight!
+You can now control the simulated aircraft - Have a nice flight!
 
 ![Screenshot_20210621-172738_Flight Simulator Control App](https://user-images.githubusercontent.com/72878018/122784087-d1c48780-d2ba-11eb-826f-388a9038e92a.jpg)
 
