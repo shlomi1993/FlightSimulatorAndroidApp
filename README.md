@@ -55,11 +55,11 @@ The program is devided according to MVVM architecture:
 9. You can now control the simulator.
 
 
-## Explanation Video
+## Presentation
 
-https://youtu.be/GOK3DV1zgKs
+Introduction video: https://youtu.be/GOK3DV1zgKs
 
-Presentation: [FlightControl App Presentation.pptx](https://github.com/shlomi1993/FlightSimulatorAndroidApp/files/6691236/FlightControl.App.Presentation.pptx)
+Slides: [FlightControl App Presentation.pptx](https://github.com/shlomi1993/FlightSimulatorAndroidApp/files/6691236/FlightControl.App.Presentation.pptx)
 
 
 ## Guide for installation on Android Device
