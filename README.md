@@ -22,9 +22,9 @@ In this project I've implemented an Android app that allows the user to remotely
 
 The program is devided according to MVVM architecture:
 
-1. Model:     Holds data (client) and logic, sends commands to the flight simulator.
-2. ViewModel: Acts as the link between the Model and View.
-3. View:      Responsible for the visualization and creating displays for the user
+1. **Model**:     Holds data (client) and logic, sends commands to the flight simulator.
+2. **ViewModel**: Acts as the link between the Model and View.
+3. **View**:      Responsible for the visualization and creating displays for the user
 
 
 
