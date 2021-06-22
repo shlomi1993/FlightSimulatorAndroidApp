@@ -57,7 +57,9 @@ The program is devided according to MVVM architecture:
 
 ## Explanation Video
 
-println("Not implemented")
+https://youtu.be/GOK3DV1zgKs
+
+Presentation: [FlightControl App Presentation.pptx](https://github.com/shlomi1993/FlightSimulatorAndroidApp/files/6691236/FlightControl.App.Presentation.pptx)
 
 
 ## Guide for installation on Android Device
@@ -117,10 +119,6 @@ Have a nice flight!
 4. draw.io ( https://app.diagrams.net/ ) - for the UML
 5. Samsung Galaxy S20 device.
 
-
-## Presentation
-
-[FlightControl App Presentation.pptx](https://github.com/shlomi1993/FlightSimulatorAndroidApp/files/6687397/FlightControl.App.Presentation.pptx)
 
 
 ## Important Notes
