@@ -32,6 +32,7 @@ The program is devided according to MVVM architecture:
 
 ![FlightControlAppUML](https://user-images.githubusercontent.com/72878018/123062482-3dbb0300-d415-11eb-9e2e-fc50f40e43b2.png)
 
+(Click to enlarge)
 
 
 ## Instructions for running the app using Android Studio
