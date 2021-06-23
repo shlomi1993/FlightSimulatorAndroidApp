@@ -6,6 +6,7 @@
 
 package com.example.flightsimulatorandroidapp.view
 
+import android.app.AlertDialog
 import android.os.Build
 import android.os.Bundle
 import android.widget.TextView
@@ -17,6 +18,7 @@ import com.example.flightsimulatorandroidapp.model.FlightControlModel
 import com.example.flightsimulatorandroidapp.viewModel.MainViewModel
 import com.google.android.material.slider.Slider
 import io.github.controlwear.virtual.joystick.android.JoystickView
+import java.io.IOException
 import java.net.InetAddress
 import kotlin.math.roundToInt
 
@@ -96,29 +98,41 @@ class FlightControlActivity : AppCompatActivity() {
         joystick.setOnMoveListener(JoystickView.OnMoveListener() { angle: Int, strength: Int ->
             val x = strength * kotlin.math.cos(Math.toRadians(angle * 1.0)).roundToInt() / 100.0
             val y = strength * kotlin.math.sin(Math.toRadians(angle * 1.0)).roundToInt() / 100.0
-            mainViewModel.setAileron(x.toFloat())
-            mainViewModel.setElevator(y.toFloat())
-            val a = "Aileron: $x"
-            aileronText.text = a
-            val e = "Elevator: $y"
-            elevatorText.text = e
-
+            try {
+                mainViewModel.setAileron(x.toFloat())
+                mainViewModel.setElevator(y.toFloat())
+                val a = "Aileron: $x"
+                aileronText.text = a
+                val e = "Elevator: $y"
+                elevatorText.text = e
+            } catch (e: IOException) {
+                showServerUnreachableMessage()
+            }
         })
 
         // Create rudder.
         rudder = findViewById<Slider>(R.id.rudder)
         rudder.addOnChangeListener { rudder, value, fromUser ->
-            mainViewModel.setRudder(value)
-            val r = "Rudder: " + (value * 100).roundToInt() / 100.0
-            rudderText.text = r
+            try {
+                mainViewModel.setRudder(value)
+                val r = "Rudder: " + (value * 100).roundToInt() / 100.0
+                rudderText.text = r
+            } catch (e: IOException) {
+                showServerUnreachableMessage()
+            }
+
         }
 
         // Create throttle.
         throttle = findViewById<Slider>(R.id.throttle)
         throttle.addOnChangeListener { throttle, value, fromUser ->
-            mainViewModel.setThrottle(value)
-            val t = "Throttle: " + (value * 100).roundToInt() / 100.0
-            throttleText.text = t
+            try {
+                mainViewModel.setThrottle(value)
+                val t = "Throttle: " + (value * 100).roundToInt() / 100.0
+                throttleText.text = t
+            } catch (e: IOException) {
+                showServerUnreachableMessage()
+            }
         }
 
     }
@@ -137,6 +151,17 @@ class FlightControlActivity : AppCompatActivity() {
     override fun onDestroy() {
         client.disconnect()
         super.onDestroy()
+    }
+
+    /**
+     *  This method pops up a "server unreachable" error message to the screen.
+     */
+    private fun showServerUnreachableMessage() {
+        AlertDialog.Builder(this)
+            .setTitle("Connection Error")
+            .setMessage("Server is unreachable.")
+            .setNeutralButton("OK") { dialog, which -> super.onBackPressed() }
+            .show()
     }
 
 }

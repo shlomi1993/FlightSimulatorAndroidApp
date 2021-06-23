@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     *  This method pops up a connection error message on the screen.
+     *  This method pops up a connection error message to the screen.
      *
      *  @param msg - a message that provides information about the error.
      */

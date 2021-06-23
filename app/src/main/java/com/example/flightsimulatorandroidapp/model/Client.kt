@@ -29,6 +29,8 @@ class Client {
     )
     private lateinit var socket: Socket
     private lateinit var output: OutputStream
+    private var connected: Boolean = false
+    private var throwed: Boolean = false
 
     /**
      * This method connects the client to a server by given IP and port.
@@ -43,7 +45,11 @@ class Client {
             try {
                 socket = Socket()
                 socket.connect(InetSocketAddress(ip, port), 5000)
-                if (socket.isConnected) output = socket.getOutputStream()
+                if (socket.isConnected) {
+                    output = socket.getOutputStream()
+                    connected = true
+                    throwed = false
+                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -60,17 +66,23 @@ class Client {
      * @param value - The new value to set.
      */
     fun send(parameter: String, value: String) {
-        Executors.newSingleThreadExecutor().submit(Callable {
-            if (requests.containsKey(parameter)) {
-                val message = "set " + requests[parameter] + " " + value + " \r\n"
-                try {
-                    output.write(message.toByteArray(Charsets.UTF_8))
-                    output.flush()
-                } catch (e: IOException) {
-                    e.printStackTrace()
+        if (connected) {
+            Executors.newSingleThreadExecutor().submit(Callable {
+                if (requests.containsKey(parameter)) {
+                    val message = "set " + requests[parameter] + " " + value + " \r\n"
+                    try {
+                        output.write(message.toByteArray(Charsets.UTF_8))
+                        output.flush()
+                    } catch (e: IOException) {
+                        connected = false
+                        e.printStackTrace()
+                    }
                 }
-            }
-        })
+            })
+        } else if (!throwed) {
+            throwed = true
+            throw IOException()
+        }
     }
 
     /**
@@ -80,6 +92,7 @@ class Client {
         try {
             output.close()
             socket.close()
+            connected = false
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -89,9 +102,7 @@ class Client {
      * This method returns true if the client is connected, and false otherwise.
      */
     fun isConnected(): Boolean {
-        if (socket.isConnected)
-            return true
-        return false
+        return socket.isConnected
     }
 
 }
