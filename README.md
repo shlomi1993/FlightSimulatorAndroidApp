@@ -1,6 +1,7 @@
 # FlightSimulatorAndroidApp
 
 
+
 ## Introduction
 
 This repository documents my last project in Adanced Programming 2 course at Bar-Ilan university.
@@ -9,24 +10,28 @@ In this project I've implemented an Android app that allows the user to remotely
 ![sshot1](https://user-images.githubusercontent.com/72878018/122671505-9f8a2b80-d1cf-11eb-8810-e9586d3ff038.png)
 
 
+
 ## System Requirements
 
 1. Android device with Android 11.0 x86 OS (The program is likely to work on lower versions as well).
 2. FlightGear simulator – Download here: https://www.flightgear.org/download/
 
 
+
 ## Model, View, ViewModel
 
 The program is devided according to MVVM architecture:
 
-1. Model:     Holds data (client) and logic, sends commands to the flight simulator.
-2. ViewModel: Acts as the link between the Model and View.
-3. View:      Responsible for the visualization and creating displays for the user
+1. **Model**:     Holds data (client) and logic, sends commands to the flight simulator.
+2. **ViewModel**: Acts as the link between the Model and View.
+3. **View**:      Responsible for the visualization and creating displays for the user
+
 
 
 ### Class diagram:
 
-![FlightControlAppUML2](https://user-images.githubusercontent.com/72878018/122671964-cea19c80-d1d1-11eb-8aad-c56aa9b0ddcc.png)
+![FlightControlAppUML](https://user-images.githubusercontent.com/72878018/122868017-0d9b3380-d333-11eb-9a83-a34baae177b0.png)
+
 
 
 ## Instructions for running the app using Android Studio
@@ -42,6 +47,7 @@ The program is devided according to MVVM architecture:
 9. You can now control the simulator.
 
 
+
 ## Instructions for running the app using your android device
 
 1. Install FlightGear on your machine.
@@ -55,9 +61,13 @@ The program is devided according to MVVM architecture:
 9. You can now control the simulator.
 
 
-## Explanation Video
 
-println("Not implemented")
+## Presentation
+
+Introduction video: https://youtu.be/GOK3DV1zgKs
+
+Slides: [FlightControl App Presentation.pptx](https://github.com/shlomi1993/FlightSimulatorAndroidApp/files/6691236/FlightControl.App.Presentation.pptx)
+
 
 
 ## Guide for installation on Android Device
@@ -98,12 +108,12 @@ Now you can start the app:
 ![Screenshot_20210621-172707_Flight Simulator Control App](https://user-images.githubusercontent.com/72878018/122783957-b5284f80-d2ba-11eb-960e-a9e79a76efe2.jpg)
 
 
-And enter **valid** IP and port, and press connect.
+Enter **valid** IP address and port number, and press connect.
 
 ![Screenshot_20210621-172718_Flight Simulator Control App](https://user-images.githubusercontent.com/72878018/122784022-c3766b80-d2ba-11eb-8bd7-2370ffe0ea8f.jpg)
 
 
-Have a nice flight!
+You can now control the simulated aircraft - Have a nice flight!
 
 ![Screenshot_20210621-172738_Flight Simulator Control App](https://user-images.githubusercontent.com/72878018/122784087-d1c48780-d2ba-11eb-826f-388a9038e92a.jpg)
 
@@ -118,13 +128,9 @@ Have a nice flight!
 5. Samsung Galaxy S20 device.
 
 
-## Presentation
-
-[FlightControl App Presentation.pptx](https://github.com/shlomi1993/FlightSimulatorAndroidApp/files/6687397/FlightControl.App.Presentation.pptx)
-
 
 ## Important Notes
 
 The program was tested on:
 - Pixel XL API 30 emulator (on Android Studio IDE)
-- Samsung galaxy S20
+- Samsung galaxy S20 device (running android 11)
