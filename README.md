@@ -30,8 +30,9 @@ The program is devided according to MVVM architecture:
 
 ### Class diagram:
 
-![FlightControlAppUML](https://user-images.githubusercontent.com/72878018/122868017-0d9b3380-d333-11eb-9a83-a34baae177b0.png)
+![FlightControlAppUML](https://user-images.githubusercontent.com/72878018/123062482-3dbb0300-d415-11eb-9e2e-fc50f40e43b2.png)
 
+(Click to enlarge)
 
 
 ## Instructions for running the app using Android Studio
@@ -66,7 +67,7 @@ The program is devided according to MVVM architecture:
 
 Introduction video: https://youtu.be/GOK3DV1zgKs
 
-Slides: [FlightControl App Presentation.pptx](https://github.com/shlomi1993/FlightSimulatorAndroidApp/files/6691236/FlightControl.App.Presentation.pptx)
+Slides: [FlightControl App Presentation.pptx](https://github.com/shlomi1993/FlightSimulatorAndroidApp/files/6700190/FlightControl.App.Presentation.pptx)
 
 
 
