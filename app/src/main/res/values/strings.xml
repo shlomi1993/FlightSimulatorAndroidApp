@@ -4,6 +4,7 @@
     <string name="show_port_msg">Port:</string>
     <string name="button_connect">Connect</string>
     <string name="connect">connect</string>
-    <string name="ip_hint">example: 192.168.50.1</string>
+    <string name="ip_hint">example: 192.168.1.5</string>
     <string name="port_hint">example: 6400</string>
+    <string name="joystick_background">Background for Joystick</string>
 </resources>

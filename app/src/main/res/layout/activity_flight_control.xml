@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.150" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <TextView
         android:id="@+id/aileronText"
@@ -71,7 +71,8 @@
         app:layout_constraintEnd_toEndOf="@+id/joystick"
         app:layout_constraintStart_toStartOf="@+id/joystick"
         app:layout_constraintTop_toTopOf="@+id/joystick"
-        app:srcCompat="@drawable/arrows" />
+        app:srcCompat="@drawable/arrows"
+        android:contentDescription="@string/joystick_background" />
 
     <io.github.controlwear.virtual.joystick.android.JoystickView
         android:id="@+id/joystick"
@@ -85,10 +86,10 @@
         app:JV_fixedCenter="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671" />
+        app:layout_constraintVertical_bias="0.67" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/rudder"
@@ -98,14 +99,14 @@
         android:value="0"
         android:valueFrom="-1.0"
         android:valueTo="1.0"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/joystick"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/joystick"
         app:layout_constraintTop_toBottomOf="@+id/joystick"
         app:layout_constraintVertical_bias="0.143"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         app:trackColorActive="@color/colorPrimary"
         app:trackColorInactive="@color/colorPrimary"
         app:thumbColor="@color/colorPrimaryDark"
@@ -117,12 +118,13 @@
         android:layout_height="50dp"
         android:background="@color/white_trans"
         android:rotation="270"
+        android:translationX="190dp"
         android:value="0"
         android:valueFrom="0"
         android:valueTo="1.0"
         app:labelBehavior="gone"
         app:layout_constraintBottom_toBottomOf="@+id/joystick"
-        app:layout_constraintEnd_toEndOf="@+id/rudderText"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/joystick"
         app:thumbColor="@color/colorPrimaryDark"
         app:trackColorActive="@color/colorPrimary"

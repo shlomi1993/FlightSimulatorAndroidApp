@@ -70,16 +70,16 @@ class FlightControlActivity : AppCompatActivity() {
             client = Client()
             client.connect(InetAddress.getByName(ip), port.toInt())
             val msg = "Connected to:\n    IP $ip\n    Port $port"
-            findViewById<TextView>(R.id.connectionMessage).setText(msg)
+            findViewById<TextView>(R.id.connectionMessage).text = msg
         } catch (e: Exception) {
             e.printStackTrace()
         }
 
         // Set initial dashboard's values.
-        aileronText = findViewById<TextView>(R.id.aileronText)
-        elevatorText = findViewById<TextView>(R.id.elevatorText)
-        rudderText = findViewById<TextView>(R.id.rudderText)
-        throttleText = findViewById<TextView>(R.id.throttleText)
+        aileronText = findViewById(R.id.aileronText)
+        elevatorText = findViewById(R.id.elevatorText)
+        rudderText = findViewById(R.id.rudderText)
+        throttleText = findViewById(R.id.throttleText)
         val initialAileron = "Aileron: 0.0"
         aileronText.text = initialAileron
         val initialElevator = "Elevator: 0.0"
@@ -94,8 +94,8 @@ class FlightControlActivity : AppCompatActivity() {
         mainViewModel = MainViewModel(FlightControlModel(client))
 
         // Create joystick.
-        joystick = findViewById<JoystickView>(R.id.joystick)
-        joystick.setOnMoveListener(JoystickView.OnMoveListener() { angle: Int, strength: Int ->
+        joystick = findViewById(R.id.joystick)
+        joystick.setOnMoveListener { angle: Int, strength: Int ->
             val x = strength * kotlin.math.cos(Math.toRadians(angle * 1.0)).roundToInt() / 100.0
             val y = strength * kotlin.math.sin(Math.toRadians(angle * 1.0)).roundToInt() / 100.0
             try {
@@ -108,11 +108,11 @@ class FlightControlActivity : AppCompatActivity() {
             } catch (e: IOException) {
                 showServerUnreachableMessage()
             }
-        })
+        }
 
         // Create rudder.
-        rudder = findViewById<Slider>(R.id.rudder)
-        rudder.addOnChangeListener { rudder, value, fromUser ->
+        rudder = findViewById(R.id.rudder)
+        rudder.addOnChangeListener { _, value, _ ->
             try {
                 mainViewModel.setRudder(value)
                 val r = "Rudder: " + (value * 100).roundToInt() / 100.0
@@ -124,8 +124,8 @@ class FlightControlActivity : AppCompatActivity() {
         }
 
         // Create throttle.
-        throttle = findViewById<Slider>(R.id.throttle)
-        throttle.addOnChangeListener { throttle, value, fromUser ->
+        throttle = findViewById(R.id.throttle)
+        throttle.addOnChangeListener { _, value, _ ->
             try {
                 mainViewModel.setThrottle(value)
                 val t = "Throttle: " + (value * 100).roundToInt() / 100.0
@@ -160,7 +160,8 @@ class FlightControlActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Connection Error")
             .setMessage("Server is unreachable.")
-            .setNeutralButton("OK") { dialog, which -> super.onBackPressed() }
+            .setCancelable(false)
+            .setNeutralButton("OK") { _, _ -> super.onBackPressed() }
             .show()
     }
 

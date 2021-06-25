@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
         // Call parent's onCreate(), set content view and View's components.
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ip = findViewById<EditText>(R.id.input_ip)
-        port = findViewById<EditText>(R.id.input_port)
-        connect = findViewById<Button>(R.id.connect)
+        ip = findViewById(R.id.input_ip)
+        port = findViewById(R.id.input_port)
+        connect = findViewById(R.id.connect)
 
         // Create TextWatcher object to allow clicking on "connect" only if IP and port inserted.
         textWatcher = object : TextWatcher {
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val ipInput = ip.text.toString().trim()
                 val portInput = port.text.toString().trim()
-                connect.isEnabled = !ipInput.isEmpty() && !portInput.isEmpty()
+                connect.isEnabled = ipInput.isNotEmpty() && portInput.isNotEmpty()
             }
             override fun afterTextChanged(s: Editable?) { }
         }
@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         val alertBuilder = AlertDialog.Builder(this)
         alertBuilder.setTitle("Connection Error")
         alertBuilder.setMessage(msg)
-        alertBuilder.setNeutralButton("OK") { dialog, which -> { } }
+        alertBuilder.setNeutralButton("OK") { _, _ -> { } }
         alertBuilder.show()
     }
 

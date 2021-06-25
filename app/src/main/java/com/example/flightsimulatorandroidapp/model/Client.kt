@@ -30,7 +30,7 @@ class Client {
     private lateinit var socket: Socket
     private lateinit var output: OutputStream
     private var connected: Boolean = false
-    private var throwed: Boolean = false
+    private var thrown: Boolean = false
 
     /**
      * This method connects the client to a server by given IP and port.
@@ -41,19 +41,19 @@ class Client {
      * @param port - An integer that represents a port number.
      */
     fun connect(ip: InetAddress, port: Int) {
-        val thread = Thread(Runnable {
+        val thread = Thread {
             try {
                 socket = Socket()
                 socket.connect(InetSocketAddress(ip, port), 5000)
                 if (socket.isConnected) {
                     output = socket.getOutputStream()
                     connected = true
-                    throwed = false
+                    thrown = false
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-        })
+        }
         thread.start()
         thread.join()
     }
@@ -79,8 +79,8 @@ class Client {
                     }
                 }
             })
-        } else if (!throwed) {
-            throwed = true
+        } else if (!thrown) {
+            thrown = true
             throw IOException()
         }
     }
