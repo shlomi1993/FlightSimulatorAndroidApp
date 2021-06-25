@@ -130,8 +130,12 @@ You can now control the simulated aircraft - Have a nice flight!
 
 
 
-## Important Notes
+## Notes
 
 The program was tested on:
 - Pixel XL API 30 emulator (on Android Studio IDE)
 - Samsung galaxy S20 device (running android 11)
+
+The throttle slider position in the screenshots looks unpositioned, but it was fixed.
+
+It isn't shown in the video, but if the server disconnects during runtime, the user receives a pop-up error that he\she must answer "OK" and then he\she is returned to the main screen.
